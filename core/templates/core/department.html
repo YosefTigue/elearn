@@ -1,0 +1,12 @@
+{% extends 'core/layout.html' %}
+{% block content %}
+      <div class="flex justify-center p-3 bg-gray-100 rounded-xl text-5xl font-bold">
+        <h1> SCHOOL OF ENGINNERING</h1> 
+      </div>
+      
+        {% for department in departments %}
+          <li class=" bg-gray-700 mt-0.5 font-semibold text-3xl p-3 mx-20 list-none text-gray-400 hover:scale-110   hover:bg-blue-900 transition-colors duration-600 ease " > <a href="{% url 'core:detail' dept.id}"> Department Of {{department.name}} </a></li>
+        {% endfor %}
+
+{% endblock %}
+

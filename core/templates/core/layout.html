@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="Viewport" content="width=dvice-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--<link rel="stylesheet" href="{% static 'core/styles.css' %}">-->
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+    </head> 
+
+    <body class="bg-gray-500">
+     <!--HEADER START-->
+        <nav class="p-5 pl-40 pr-40 flex gap-x-10 justify-between items-center border-b border-gray-200 bg-gray-800 text-gray-400 mb-7">
+            <a class="text-4xl font-bold " href="#">E<span class="font-semibold text-sky-400"> Learn</span></a>
+            <div class=" space-x-6 text-lg font-semibold"> 
+                <a href="{% url 'index' %}" class="hover:text-sky-500" >Home</a>
+                <a href="{% url 'about' %}" class="hover:text-sky-500">About</a>
+                
+                <a href="{% url 'contact' %}" class= "hover:text-sky-500" >Contact US</a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'department' %}" class= "hover:text-sky-500">Department</a>
+                    <a href="{% url 'logout' %}" class="hover:text-sky-500">Logout</a>
+
+              
+                {% else%}
+                    <a href="{% url 'login' %}" class= "hover:text-sky-500">Login</a>
+                    <a href="{% url 'signup' %}" class= "hover:text-sky-500">Singup</a>
+                {% endif %}
+            </div>
+        </nav>
+        
+     <!--HEADER END-->
+        
+
+        <!--CONTENT START -->
+
+        
+            {% block content %}
+            {% endblock%}
+
+        
+
+        <!--CONTENT END-->
+
+          
+
+
+
+      <!--FOOTER START-->
+        <footer  class=" min-w-full border-t-2 border-white mt-10 bg-gray-800"> 
+                <div class="flex justify-between  pl-10 pt-7 space-y-2 p-fixed">
+                    <div >
+                        <p class="font-semibold text-gray-200">  E Learn: Addis Ababa, Ethiopia , 2023</p>
+                        <p class="textlg text-gray-400 w-2/3"> lorem ipsum dolor,sit amet consectetur adipisicing 
+                            elit.Nostrum atque, perspiciatis accustantium quod ipsum ullam.<p>
+                        <a class="text-xl text-gray-200" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="text-xl text-gray-200" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="text-xl text-gray-200" href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a class="text-xl  text-gray-200" href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                <div>
+                <div class= "space-y-2 text-lg text-teal-500 hover:text-gray-200 mr-40 mb-10 font-semibold">
+                    
+                    <ul >
+                        <li> <a href="{% url 'signup' %}">Singup/Login</a> </li>
+                        <li><a href"#"> Privacy Policy</a></li>
+                        <li><a href="#">Term of use</a></li>
+                    </ul>
+                    
+                </div>        
+
+           
+        </footer>
+        <div class="flex  items-center justify-center bg-gray-800 p-5 border-t-2 border-sky-500">
+            <label class="text-gray-500 mr-7">Copright & Copy; 2023</label>
+            <a class="text-xl font-bold " href="#">E<span class="font-semibold text-sky-500"> Learn</span></a>
+            
+        </div>
+     <!--FOOTER END-->
+
+    </body>
+
+
+</html>

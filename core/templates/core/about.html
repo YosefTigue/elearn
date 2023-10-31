@@ -1,0 +1,33 @@
+{%extends 'core/layout.html' %}
+{% block content %}
+<div class="flex  m-10  "> 
+    <div class=" w-1/2 flex flex-col  p-20 bg-gray-700 font-bold  mb-3 text-gray-400">
+        <h1 class="text-5xl items-center "> About E-Learn </h1> 
+        <p class="pb-5 font-semibold mt-7 mb-5 text-xl ">
+            Welcome to our E-learn platform! we are a team of  who belive that learning should be 
+            accessible to everyone, everywhere. Our mission is help learners in the nation 
+            achieve their goals and advance their education in a structure manner. </p>
+    </div>
+    <div class="  flex  flex-row justify-center items-center w-1/2 ml-7 bg-gray-700 " >
+        <div class= " m-4 bg-gray-300 py-4  px-7 hover:scale-110  rounded-xl">
+            <h1 class= " pb-2 font-bold text-gray-700 text-xl  "> Course</h1>
+            <i class="fa-solid fa-book-open-reader text-sky-500 text-6xl "></i>
+            <p class= "flex items-center ">0</p>
+
+        </div>
+
+        <div class= " m-4 bg-gray-300  py-4 px-7 hover:scale-110 rounded-xl ">
+            <h1 class= " pb-2 font-bold text-gray-700 text-xl "> Student</h1>
+            <i class="fa-solid fa-users text-sky-500 text-6xl "></i>
+            <p>0</p>
+        </div>
+        
+        <div class= " m-4 bg-gray-300  py-4 px-7 hover:scale-110 rounded-xl" >
+          <h1 class= " pb-2 font-bold text-gray-700 text-xl "> Teacher</h1>
+          <i class="fa-solid fa-users text-sky-500  text-6xl "></i>
+          <p>0</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

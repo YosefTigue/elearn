@@ -1,0 +1,81 @@
+{% extends 'core/layout.html' %}
+
+{% block content%}
+<section class="flex ">
+    <div class="flex-col p-10 space-y-2 text-gray-800" >
+           <h1 class="text-5xl items-center font-semibold"> AIM </h1> 
+            <p class="pb-5 font-semibold mt-7 mb-5"> 
+                The primary goal of this initiative is to close the current
+                communication gap between educators and students by providing 
+                structured, easy-to-access resources for students throughout Ethiopia, 
+                such as PowerPoint presentations, lecture notes, pre-recorded lectures, 
+                and lab session films.  This program's initial goal is to provide
+                undergraduate engineering education.
+
+            </p>
+            {% if request.user.is_authenticated %}
+            {% else%}
+                <a href="{% url 'signup' %}" class=" px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign Up</a>
+            {% endif %}
+    </div>
+
+    <div class="grid grid-cols-3 gap-2 justify-evenly mt-4 mr-6"  >
+        <div class="bg-gray-700 text-white p-2 rounded-xl shadow-xl">
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl">CHEMICAL ENGINEERING</h3>
+            <p class="p-2" > chemical engineering use the principle of chemistry,physics, 
+                mathematics and biology to deal with the study of operations and design
+                of chemical plants as well as methods of imporving production also it
+                develops economical commercial processes to convert raw material
+                into useful products.
+            <p>
+            
+        </div>
+
+        <div class="bg-gray-700 text-white p-2 rounded-xl shadow-xl"> 
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl"> CIVIL ENGINEERING</h3>
+            <p class="p-2"> civil engineering is an engineering dicipline that deals with the desing,constction,
+                maintenance of teh physical and naturally built environment, including public works
+                such as road, bridges, canals, dams , airport , sewage system, pipelines, structural
+                components of building and railways.
+            </p> 
+        
+        </div >
+        <div class="bg-gray-700 text-white p-2 rounded-xl shadow-xl">
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl">ENIVRONMETAL ENGINNERING</h3>
+            <P class="p-2" >environmental enginnering is a professional engineering discipline related 
+                to environmental science.it encompasses broad scientific toplics like 
+                chemistry,biology, ecology, geology, hydraulics, hyrdrology,and 
+                mathematics to create solutions that will protect and also imporve the 
+                health of living organisms and improve the quality of the enviroment. 
+            </p>
+        </div>
+
+        <div class="bg-gray-700 text-white p-2 rounded-xl shadow-xl">
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl"> ELECTRICAL AND COMPUTER ENGINEERING</h3>
+            <p class="p-2" > electrical and Computer engineering is an engineering principle that
+                design and implement device, circuit, and system for communcation,
+                computing power,control, medical diagonstics, transport and others.
+            </p> 
+        </div>
+
+        <div class="bg-gray-700 text-white p-2 rounded-xl shadow-xl">
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl"> MECHANICAL ENGINEERING</h3>
+            <p class="p-2" > mechanical engineering is an engineering branch that combines engineering
+                that combines engineering physics and mathmatics principle with material
+                science, to design , analyze, manfacture, and maintain mechanical systems.
+            </p>
+        </div> 
+
+        <div class="bg-gray-700  text-gray-200  text-white p-2 rounded-xl shadow-xl">
+            <h3 class =" mb-3 font-semibold text-gray-400 text-xl"> SOFTWARE ENGINEERING</h3>
+            <p class="p-2" >software engineering is an engineering techniques that are used 
+                in the software development process,which involves the design,develop
+                assesment change, and improvement fo software life cycl process itself
+            </p>
+        <div>
+
+    </div>
+</section >
+    
+
+{% endblock %}
